@@ -1,0 +1,22 @@
+[package]
+name = "route-planner"
+version = "0.1.0"
+edition = "2021"
+description = "Сервер планирования маршрутов доставки: geo/Haversine, кластеризация K-means, TSP, VRPTW, Дейкстра, имитация отжига, ML (SGD + UCB1), OSRM"
+authors = ["Route Planner Demo"]
+
+[dependencies]
+actix-web = "4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+geo = "0.28"
+ureq = { version = "2", features = ["json"] }
+rand = "0.8"
+log = "0.4"
+env_logger = "0.11"
+
+[dev-dependencies]
+actix-http = "3"
+
+[profile.release]
+opt-level = 2
